@@ -1,113 +1,183 @@
-import Image from 'next/image'
+import Image from "next/image";
+import FAQComponent from "./component/FAQComponent";
+import { faqData } from "./Data/FAQ";
 
-export default function Home() {
-  return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
 
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
+const HomePage = () => {
+    return (
+        //header Section
+        <section className="bg-cover bg-center lg:h-screen md:h-[640px] h-[50em] " style={{ backgroundImage: "url('/images/hero2.jpg')" }}>
+            <div className="h-full mx-auto bg-[rgba(0,0,0,0.5)]">
+                <header className="max-w-[1170px] mx-auto">
+                    <div className="grid grid-cols-2 items-center justify-end  ">
+                        <figure>
+                            <Image src={'/images/netlogo.jpg'} width={200} height={200} alt="Netflix" />
+                        </figure>
+                        <div className="text-right  px-2">
+                            <button className="bg-red-600 py-1 px-3 rounded text-slate-200 item-center">Sign in</button>
+                        </div>
+                    </div>
+                </header>
 
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
+                <div className="max-w-full sm:pt-[150px] pt-[120px] py[35px] text-center text-white ">
+                    <h1 className=" font-bold sm:text-[45px] text-[35px]">Unlimited movies, TV shows, and more</h1>
+                    <h2 className=" text-[20px] py-[12px]">Watch anywhere. Cancel anytime.</h2>
+                    <h4 className="text-[18px]">Ready to watch? Enter your email to create or restart your membership.</h4>
+                </div>
 
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
+                <div className="max-w-[700px] mx-auto sm:px-[80px] px-[50px] mt-6">
+                    <form action="" className="grid  sm:grid-cols-[70%_auto] grid-cols-1 gap-[15px]">
+                        <input type="text" className="border-[2px] border-[#776a6a] bg-transparent rounded h-[50px] pl-[20px] bg-[]rgba(0,0,0.5)" placeholder="Email address" />
+                        <button className="bg-red-600  rounded text-xl hover:bg-red-700 duration-300 font-medium text-white sm:h-[50px] h-[50px]">Get Started  </button>
+                    </form>
+                </div>
+            </div>
 
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore starter templates for Next.js.
-          </p>
-        </a>
+            {/*hero2 Section*/}
 
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  )
-}
+            <section className="w-[100%] bg-black border-t-[8px] border-t-[#605d5d] sm:py-[100px] py-[50px] ">
+                <div className="max-w-[1170px] mx-auto ">
+                    <div className="grid sm:grid-cols-2 grid-cols-1 items-center px-2">
+                        <div className="text-white ">
+                            <h2 className="sm:text-[50px] text-[35px] sm:text-left text-center font-bold">Enjoy on your TV</h2>
+                            <p className="sm:text-[25px] text-[20px] sm:text-left text-center pt-[25px]">Watch on Smart TVs, Playstation, Xbox, Chromecast,  Apple TV, Blu-ray players, and more.</p>
+                        </div>
+                        <figure className="relative">
+                            <video className="absolute sm:w-[62%] w-[72%] sm:left-[12%] left-[14%] bottom-[25%] z-[1] "
+                                src="/images/video1.m4v"></video>
+                            <Image className="relative z-[2]" src={"/images/tv.jpg"} alt="neflix tv" height={500} width={500}></Image>
+                        </figure>
+                    </div>
+                </div>
+            </section>
+
+
+
+            <section className="w-[100%] bg-black border-t-[8px] border-t-[#605d5d] sm:py-[100px] py-[50px] ">
+                <div className="max-w-[1170px] mx-auto ">
+                    <div className="grid sm:grid-cols-2 grid-cols-1 items-center px-2">
+                        <figure className="relative sm:order-1 order-2">
+                            <img src="/images/mobile.jpg" alt="" />
+                            <div className="sm:w-[60%] w-[90%] absolute sm:left-[20%] left-[5%] border-[1px] rounded-[9px] bottom-[10px]
+                             border-[#ccc] grid grid-cols-[70%_auto] bg-black items-center">
+                                <div className="grid grid-cols-[25%_auto] gap-[10px] p-[10px] items-center ">
+                                    <img src="/images/boxshot.png" alt="" />
+                                    <div className="text-white">
+                                        <h3 className="font-bold">stranger Things</h3>
+                                        <span className="text-blue-500">Downloading...</span>
+                                    </div>
+                                </div>
+                                <div>
+                                    <img src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/download-icon.gif" alt="" />
+                                </div>
+
+                            </div>
+                        </figure>
+                        <div className="text-white sm:order-2 order">
+                            <h2 className="sm:text-[50px] text-[35px] sm:text-left text-center font-bold leading-[60px]">Download your shows to watch offline</h2>
+                            <p className="sm:text-[25px] text-[20px] sm:text-left text-center pt-[25px]">Save your favorites easily and always have something to watch..</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section className="w-[100%] bg-black border-t-[8px] border-t-[#605d5d] sm:py-[100px] py-[50px] ">
+                <div className="max-w-[1170px] mx-auto ">
+                    <div className="text-white">
+                        <h2 className="sm:text-[50px] text-[35px] sm:text-left text-center font-bold leading-[50px]">Watch <br /> everywhere</h2>
+                        <p className="sm:text-[25px] text-[20px] sm:text-left text-center pt-[25px] leading-[30px]">Stream unlimited movies and TV <br /> shows on your phone, tablet, laptop,<br /> and TV.</p>
+                    </div>
+                </div>
+            </section>
+
+
+            <section className="w-[100%] bg-black border-t-[8px] border-t-[#605d5d] sm:py-[100px] py-[50px] ">
+                <div className="max-w-[1170px] mx-auto ">
+                    <div className="grid sm:grid-cols-2 grid-cols-1 items-center">
+                        <div className="sm:order-1 order-2">
+                            <img src="/images/kids.png" alt="Kids" />
+                        </div>
+                        <div className="text-white sm:order-2 order-1">
+                            <h2 className="sm:text-[50px] text-[32px] sm:text-left text-center font-bold leading-[50px]">Create profiles for kids</h2>
+                            <p className="sm:text-[25px] text-[19px] sm:text-left text-center pt-[25px] leading-[30px]">
+                                Send kids on adventures with their favorite characters in a space made just for them free with your membership</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section className="w-[100%] bg-black border-t-[8px] border-t-[#605d5d] sm:py-[80px] py-[50px]">
+                <div className="max-w-[1170px] mx-auto px-[15px]">
+                    <h2 className="sm:text-[50px] text-[40px] font-bold text-white text-center pb-20">frequently Asked Questions</h2>
+
+                    <div className='mb-10'>
+                        {faqData.map((item, index) => {
+                            const { title, desc } = item
+                            return (
+                                <FAQComponent title={title} desc={desc} />
+                            )
+                        })}
+                    </div>
+                </div>
+            </section>
+            <section className="bg-black">
+                <div className=' container mx-auto max-w-6xl lg:py-20 md:py-20 py-10 px-5 '>
+                    <p className='text-gray-300 mb-5'>Questions? Call <span className=' underline'>000-800-919-1694</span></p>
+                    <div className="text-gray-300 flex flex-wrap justify-between mb-4 cursor-pointer">
+                        <div className="1">
+                            <ul className='underline'>
+                                <li className='mb-3'>FAQ</li>
+                                <li className='mb-3'>Investor Relations</li>
+                                <li className='mb-3'>Privacy</li>
+                                <li className='mb-3'>Speed Test</li>
+                            </ul>
+                        </div>
+                        <div className="2">
+                            <ul className='underline'>
+                                <li className='mb-3'>Help Centre</li>
+                                <li className='mb-3'>Jobs</li>
+                                <li className='mb-3'>Cookie Preferences</li>
+                                <li className='mb-3'>Legal Notices</li>
+                            </ul>
+                        </div>
+                        <div className="3">
+                            <ul className='underline'>
+                                <li className='mb-3'>Account</li>
+                                <li className='mb-3'>Ways to Watch</li>
+                                <li className='mb-3'>Corporate Information</li>
+                                <li className='mb-3'>Only on Netflix</li>
+                            </ul>
+                        </div>
+                        <div className="4">
+                            <ul className='underline'>
+                                <li className='mb-3'>Media Centre</li>
+                                <li className='mb-3'>Terms of Use</li>
+                                <li className='mb-3'>Contact Us</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div
+                        className=" bg-[#111112] text-white lg:px-5 md:px-5 px-3 py-1 rounded-md border-[1.5px] border-gray-600 hover:ring-2 hover:ring-gray-200 opacity-80 w-28 mb-5 ">
+                        <select
+                            name=""
+                            id=""
+                            className=' bg-transparent outline-none '
+                        >
+                            <option value="English">English</option>
+                            <option value="हिन्दी">URDU</option>
+                        </select>
+                    </div>
+                    <p className='text-gray-300'>Netflix Pakistan</p>
+                </div>
+            </section>
+        </section>
+
+    );
+};
+
+
+
+
+
+
+export default HomePage;
