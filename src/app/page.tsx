@@ -57,18 +57,18 @@ const HomePage = () => {
                 <div className="max-w-[1170px] mx-auto ">
                     <div className="grid sm:grid-cols-2 grid-cols-1 items-center px-2">
                         <figure className="relative sm:order-1 order-2">
-                            <img src="/images/mobile.jpg" alt="" />
+                            <Image src="/images/mobile.jpg" alt="" height={"1000"} width={'1000'}/>
                             <div className="sm:w-[60%] w-[90%] absolute sm:left-[20%] left-[5%] border-[1px] rounded-[9px] bottom-[10px]
                              border-[#ccc] grid grid-cols-[70%_auto] bg-black items-center">
                                 <div className="grid grid-cols-[25%_auto] gap-[10px] p-[10px] items-center ">
-                                    <img src="/images/boxshot.png" alt="" />
+                                    <Image src="/images/boxshot.png" alt="" height={"100"} width={'100'}/>
                                     <div className="text-white">
                                         <h3 className="font-bold">stranger Things</h3>
                                         <span className="text-blue-500">Downloading...</span>
                                     </div>
                                 </div>
                                 <div>
-                                    <img src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/download-icon.gif" alt="" />
+                                    <Image src="/d.gif" alt="" height={"1000"} width={'1000'}/>
                                 </div>
 
                             </div>
@@ -95,7 +95,7 @@ const HomePage = () => {
                 <div className="max-w-[1170px] mx-auto ">
                     <div className="grid sm:grid-cols-2 grid-cols-1 items-center">
                         <div className="sm:order-1 order-2">
-                            <img src="/images/kids.png" alt="Kids" />
+                            <Image src="/images/kids.png" alt="Kids" height={"1000"} width={'1000'}/>
                         </div>
                         <div className="text-white sm:order-2 order-1">
                             <h2 className="sm:text-[50px] text-[32px] sm:text-left text-center font-bold leading-[50px]">Create profiles for kids</h2>
@@ -112,10 +112,10 @@ const HomePage = () => {
 
                     <div className='mb-10'>
                         {faqData.map((item, index) => {
-                            const { title, desc } = item
+                            const { title, desc } = item;
                             return (
-                                <FAQComponent title={title} desc={desc} />
-                            )
+                                <FAQComponent key={index} title={title} desc={desc} />
+                            );
                         })}
                     </div>
                 </div>
